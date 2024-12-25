@@ -167,9 +167,9 @@ export default function NotionRenderer(props) {
         case "toggle":
           block.type += "_nobelium";
           break;
-        case "image":
-          block.type += "_nobelium";
-          break;
+        // case "image":
+        //   block.type += "_nobelium";
+        //   break;
       }
     }
   }
