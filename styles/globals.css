@@ -142,3 +142,7 @@ nav {
 .capture-pointer-events * {
   @apply pointer-events-none;
 }
+
+[data-rmiz-btn-unzoom] {
+  @apply !hidden;
+}
