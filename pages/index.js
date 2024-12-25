@@ -27,7 +27,7 @@ export default function Blog({ postsToShow, page, showNext }) {
   return (
     <Container title={title} description={description}>
       <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">
-        这是一个普普通通草稿本。
+        只是一个普普通通草稿本。
       </p>
     </Container>
   );

@@ -4,7 +4,6 @@ import cn from "classnames";
 import { useConfig } from "@/lib/config";
 import useTheme from "@/lib/theme";
 import FormattedDate from "@/components/FormattedDate";
-import TagItem from "@/components/TagItem";
 import NotionRenderer from "@/components/NotionRenderer";
 import TableOfContents from "@/components/TableOfContents";
 
@@ -58,13 +57,6 @@ export default function Post(props) {
           <div className="mr-2 mb-4 md:ml-0">
             <FormattedDate date={post.date} />
           </div>
-          {post.tags && (
-            <div className="flex flex-nowrap max-w-full overflow-x-auto article-tags">
-              {post.tags.map((tag) => (
-                <TagItem key={tag} tag={tag} />
-              ))}
-            </div>
-          )}
         </nav>
       )}
       <div className="self-stretch -mt-4 flex flex-col items-center lg:flex-row lg:items-stretch">

@@ -35,12 +35,6 @@ class MyDocument extends Document {
           />
           <link rel="preconnect" href="https://cdn-file.hyperos.mi.com" />
           <link rel="icon" href="/favicon.svg" />
-          <link
-            rel="alternate"
-            type="application/rss+xml"
-            title="RSS 2.0"
-            href="/feed"
-          ></link>
           {config.appearance === "auto" ? (
             <>
               <meta
