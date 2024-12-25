@@ -1,40 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@font-face {
-  font-family: 'IBM Plex Sans';
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-  font-named-instance: 'Regular';
-  src: url('/fonts/IBMPlexSansVar-Roman.woff2') format('woff2');
-}
 
-@font-face {
-  font-family: 'IBM Plex Sans';
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: italic;
-  font-named-instance: 'Italic';
-  src: url('/fonts/IBMPlexSansVar-Italic.woff2') format('woff2');
-}
+@import "https://cdn-font.hyperos.mi.com/font/css?family=MiSans_VF:VF:Chinese_Simplify,Latin&display=swap";
+@import "https://cdn-font.hyperos.mi.com/font/css?family=MiSans_Latin_VF:VF:Latin&display=swap";
+@import "https://cdn-font.hyperos.mi.com/font/css?family=MiSans_L3:400:Uncommon&display=swap";
 
-@font-face {
-  font-family: 'Source Serif';
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-  font-named-instance: 'Regular';
-  src: url('/fonts/SourceSerif.var.woff2') format('woff2');
-}
-
-@font-face {
-  font-family: 'Source Serif';
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: italic;
-  font-named-instance: 'Italic';
-  src: url('/fonts/SourceSerif-Italic.var.woff2') format('woff2');
+*:not(.katex *),
+.font-mono,
+.font-base,
+.font-bold,
+.katex .cjk_fallback {
+  font-family: MiSans VF, MiSans Latin VF, MiSans L3, MiSans, ui-sans-serif,
+    system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    Segoe UI Symbol, "Noto Color Emoji" !important;
 }
 
 html {
@@ -72,7 +51,7 @@ body::-webkit-scrollbar-thumb {
   position: sticky;
   z-index: 10;
   top: -1px;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(16px);
   transition: all 0.5s cubic-bezier(0.4, 0, 0, 1);
   border-bottom-color: transparent;
 }
@@ -90,7 +69,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .header-name {
-  display: none;
+  display: grid;
   overflow: hidden;
 }
 
@@ -121,37 +100,37 @@ nav {
   user-select: none;
 }
 
-@media (min-width: 768px) {
-  .sticky-nav-full {
-    @apply max-w-full border-b border-opacity-50 border-gray-200 dark:border-gray-600 dark:border-opacity-50;
-  }
-  .header-name {
-    display: grid;
-  }
-  .site-title,
-  .post-title {
-    @apply transition duration-500;
-  }
-  .site-description {
-    opacity: 0;
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0, 1);
-  }
-  .sticky-nav-full .site-description {
-    @apply opacity-100 transition duration-500;
-  }
-  .post-title {
-    @apply opacity-0;
-  }
-  .post-title ~ span .site-description {
-    @apply hidden;
-  }
-  .sticky-nav-full .post-title {
-    @apply opacity-100;
-  }
-  .sticky-nav-full .post-title ~ span .site-title {
-    @apply opacity-0;
-  }
+/* @media (min-width: 768px) { */
+.sticky-nav-full {
+  @apply max-w-full border-b border-opacity-50 border-gray-200 dark:border-gray-600 dark:border-opacity-50;
 }
+.header-name {
+  display: grid;
+}
+.site-title,
+.post-title {
+  @apply transition duration-500;
+}
+.site-description {
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0, 1);
+}
+.sticky-nav-full .site-description {
+  @apply opacity-100 transition duration-500;
+}
+.post-title {
+  @apply opacity-0;
+}
+.post-title ~ span .site-description {
+  @apply hidden;
+}
+.sticky-nav-full .post-title {
+  @apply opacity-100;
+}
+.sticky-nav-full .post-title ~ span .site-title {
+  @apply opacity-0;
+}
+/* } */
 
 @supports not (backdrop-filter: none) {
   .sticky-nav {
